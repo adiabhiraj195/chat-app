@@ -6,7 +6,7 @@ import Page from './pages/desktop';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App text-gray-400">
       <Routes>
         <Route path='/' Component={Login}/>
         <Route path='/register' Component={Register}/>

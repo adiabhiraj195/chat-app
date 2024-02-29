@@ -47,7 +47,7 @@ const Register = () => {
     if (!validateInputs()) return;
 
     try {
-      const response = await UserService.createUser({
+      await UserService.createUser({  
         fullName,
         email,
         password

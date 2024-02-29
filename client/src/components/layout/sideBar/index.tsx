@@ -1,18 +1,23 @@
 import React from 'react';
 import clsx from '../../../lib/clsx';
+import DmLayout from '../../organism/dm-layout';
+
+interface SideBarInterface {
+  classname?: string;
+
+}
 
 export default function SideBar({
-  children,
+  classname,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: SideBarInterface) {
   return (
     <div
       className={clsx(
-        "fixed left-[70px] z-10 h-screen w-60 bg-midground"
+        " bg-gray-800", classname
       )}
-      {...props}
     >
-      {children}
+      <DmLayout />
     </div>
   )
 }

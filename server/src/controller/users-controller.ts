@@ -16,7 +16,7 @@ class UsersController {
         await usersService.createUser(fullName, email, password);
         console.log("Created");
 
-        return res.status(200);
+        return res.status(200).json("created");
     }
 }
 
