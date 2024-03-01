@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import Router from "./routers";
-import sqlDb from "./db/sql";
+// import sqlDb from "./db/sql";
 
 const app = express();
 
@@ -14,11 +14,11 @@ app.use(cors({
 
 app.use("/", Router);
 
-sqlDb.sequelize.sync()
-    .then(() => {
-        console.log("Sql database is connected");
-    }).catch((error) => {
-        console.log(error + " couldn't connect");
-    })
+// sqlDb.sequelize.sync()
+//     .then(() => {
+//         console.log("Sql database is connected");
+//     }).catch((error) => {
+//         console.log(error + " couldn't connect");
+//     })
 
 export default app;

@@ -4,6 +4,6 @@ import authValidator from "../validator/auth-validator";
 
 const authRouter = Router();
 
-authRouter.use("/",authValidator.login, authController.login);
+authRouter.post("/",authValidator.login, authController.login);
 
 export default authRouter;

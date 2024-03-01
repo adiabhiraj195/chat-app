@@ -18,15 +18,15 @@ class AuthController {
                 error: "User not found"
             });
         };
-        // console.log(user);
-        const checkPassword = await usersService.checkPassword(password, user.dataValues.password);
+        console.log(user);
+        const checkPassword = await usersService.checkPassword(password, user.password as string);
 
         if (!checkPassword) {
             return res.status(400).json({
                 error: "Password is not correct"
             });
         };
-        const authResponce = usersService.loginResponse(user.dataValues.email);
+        const authResponce = usersService.loginResponse(user);
 
         return res.status(200).json({
             accessToken: authResponce

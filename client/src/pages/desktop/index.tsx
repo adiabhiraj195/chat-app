@@ -7,14 +7,14 @@ export default function Page() {
   return (
     <div className='w-screen h-screen bg-blue-200 flex'>
       <ServerBar />
-      
+
       <div className='flex flex-col justify- w-full'>
         <HeaderTab />
 
         <div className='flex w-full bg-yellow-500 h-screen'>
-          <SideBar  classname='h-full w-60'/> 
+          <SideBar classname='h-full w-60' />
           <ChatSpace classname='h-full  w-full' />
-       
+
         </div>
       </div>
     </div>
