@@ -1,16 +1,11 @@
 import { model, Schema } from "mongoose";
 
-// const logs = new Schema({
-//     last_login: {type: Date},
-//     last_password_reset: {type: Date}
-// })
-
 const UserSchema = new Schema({
     id: {
         type: String, unique: true, require: true
     },
     username: {
-        type: String, unique: true,
+        type: String,
     },
     name: {
         type: String, require: true,
@@ -33,7 +28,10 @@ const UserSchema = new Schema({
         available: { type: Boolean, default: false }
     },
     friends: [
-        { id: { type: String } }
+        {
+            id: { type: String },
+            conversation_id: {type: String, default: null, }
+        }
     ]
 });
 

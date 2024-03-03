@@ -48,7 +48,7 @@ const Register = () => {
 
     try {
       await UserService.createUser({  
-        fullName,
+        name: fullName,
         email,
         password
       });

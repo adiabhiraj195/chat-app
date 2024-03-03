@@ -13,8 +13,9 @@ export interface VoiceStatus {
     deaf?: boolean;
     serverMuted?: boolean;
 }
-export interface User {
+export interface UserInterface {
     id: string;
+    email: string;
     name: string;
     username?: string;
     bio?: string;

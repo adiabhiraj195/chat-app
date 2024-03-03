@@ -26,10 +26,10 @@ class AuthController {
                 error: "Password is not correct"
             });
         };
-        const authResponce = usersService.loginResponse(user);
-
+        const authResponce = await usersService.loginResponse(user);
+        // console.log(authResponce + "This is auth response");
         return res.status(200).json({
-            accessToken: authResponce
+            accessToken: authResponce,
         });
     }
 }

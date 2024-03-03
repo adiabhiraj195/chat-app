@@ -24,7 +24,7 @@ class UserService {
     }
 
     findUserByEmail = async (email: string) => {
-        return await User.findOne({ email });
+        return await User.findOne({ email }, "id password email name friends");
     }
 
     checkPassword = async (inputPassword: string, password: string) => {
