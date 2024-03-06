@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import validator from "validator";
 import useErrors from '../../hooks/useErrors';
-import UserService from '../../services/user-service';
+import UserService from '../../services/user.service';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {

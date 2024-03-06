@@ -1,17 +1,14 @@
+import { useUserStore } from '../../states/user.state';
 import SideBar from '../../components/layout/sideBar';
 import ChatSpace from '../../components/layout/chat-space/chat-space';
 import ServerBar from '../../components/layout/server-bar/server-bar';
 import HeaderTab from '../../components/layout/header-tab/header-tab';
-import { useUserStore } from '../../states/user.state';
 
 export default function Page() {
   const name = useUserStore(state => state.currentUser?.name);
-  const currentUser = useUserStore((state)=> state.currentUser);
+  // const currentUser = useUserStore((state)=> state.currentUser);
 
-  // const {currentUser, setCurrentUser} = useUserStore();
-
-  console.log(currentUser?.email + " console in index");
-  // console.log(currentUser + " console in index");
+  // console.log(currentUser);
 
   return (
     <div className='w-screen h-screen bg-blue-200 flex'>

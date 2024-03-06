@@ -22,6 +22,7 @@ export default function InputField({
       onInput={(e) => oninput((e.target as HTMLTextAreaElement).value)}
       value={value}
       placeholder={placeholder}
+      
     />
   )
 }

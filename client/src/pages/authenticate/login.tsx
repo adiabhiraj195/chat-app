@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import useErrors from '../../hooks/useErrors';
-// import UserService from '../../services/user-service';
+import AuthService from '../../services/auth.service';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
@@ -35,9 +35,12 @@ const Login = () => {
     }
 
     // try {
-      await login(email, password);
-      // const response = await UserService.login({ email, password });
+      const response = await AuthService.login({ email, password });
       // console.log(response);
+      const Token = response.data.accessToken;
+      localStorage.setItem("Token", Token);
+
+      await login(Token);
       navigate("/channels");
     // } catch (error) {
     //   console.log(error);

@@ -7,6 +7,13 @@ const UserService = {
         password: string;
     }) => {
         return API.post("/user", payload);
+    },
+
+    searchFriend: async (payload: {
+        accessToken: string;
+        friend_name: string;
+    })=>{
+        return await API.post("/user/searchFriend", payload);
     }
 }
 

@@ -2,6 +2,7 @@ import clsx from "../../../lib/clsx"
 import InputField from "../../atoms/input-field";
 import { useState } from "react";
 import ChatCard from "../../molicules/chat-card/chat-card";
+import TwoConversationService from "../../../services/two-coversation.service";
 
 interface ChatSpaceInterface {
     classname?: string;
@@ -11,20 +12,30 @@ export default function ChatSpace({
     classname,
     ...props
 }: ChatSpaceInterface) {
-    const [message, setMessage] = useState("");
+    const [message, setMessage] = useState<string>("");
 
     const inputMessage = (value: string) => {
         setMessage(value);
-        console.log(message);
+        // console.log(message);
+    }
+    const handleSendMessage = async ()=>{
+        if(message == "") return;
+        try {
+            const response = await TwoConversationService.sendMessage({
+                reciver_id: "",
+                body: message
+            })
+        } catch (error) {
+            
+        }
     }
     return (
         <div className={clsx('bg-gray-700 flex flex-col justify-between', classname)}>
             <div className=" bg-blue-900 h-full">
                 <ChatCard
-                    message="This is senders message"
-                    sender="Raj"
+                    body="This is senders message"
+                    sender_name="Raj"
                 />
-
 
             </div>
             <div className="overflow-visible flex flex-row justify-between items-center bg-green-900 pl-4 pr-4 h-fit w-full space-x-1">
@@ -38,7 +49,7 @@ export default function ChatSpace({
                     placeholder="Type your message"
                 />
 
-                <h1>x</h1>
+                <button onClick={handleSendMessage}>Send</button>
             </div>
         </div>
     )
