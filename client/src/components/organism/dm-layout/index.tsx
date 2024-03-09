@@ -1,5 +1,5 @@
-import DmListItem from '../../molicules/dm-list-item/dm-list-item';
-import DmListHeader from '../../molicules/dm-list-header/dm-list-header';
+import DmListItem from '../../molecules/dm-list-item/dm-list-item';
+import DmListHeader from '../../molecules/dm-list-header/dm-list-header';
 
 export default function DmLayout() {
   return (

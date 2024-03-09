@@ -1,7 +1,7 @@
 import clsx from "../../../lib/clsx"
 import InputField from "../../atoms/input-field";
 import { useState } from "react";
-import ChatCard from "../../molicules/chat-card/chat-card";
+import ChatCard from "../../molecules/chat-card/chat-card";
 import TwoConversationService from "../../../services/two-coversation.service";
 
 interface ChatSpaceInterface {
